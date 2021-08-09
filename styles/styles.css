@@ -14,19 +14,22 @@ html {
 }
 
 body {
-    /* Background pattern from Subtle Patterns */
-    /*background: url('img/ignasi_pattern_s.png');*/
-    font-family: "Open Sans", sans-serif;
+    /* Background pattern  */
+    background: url('../img/background-minecraft-with-shaders1.jpg');
+    font-family: cursive, serif;
     /*one Em roughly ten pixels (16 x 62.5% = 10)*/
     font-size: 62.5%;
     letter-spacing: 1.5px;
     margin: 0;
     text-align: center;
 }
-/* TODO: this container class in the center of the screen using flex-direction column */
+/* this container class in the center of the screen using flex-direction column */
 .container {
     align-items: center;
     margin-top: 8px;
+    /*display: flex and Flex-direction: column are used to center the container*/
+    display: flex;
+    flex-direction: column;
 }
 
 ul > li {
@@ -51,17 +54,18 @@ Header
 ------------------------------------*/
 
 h1 {
-    font-size: 48px;
-    font-weight: 400;
+    font-size: 54px;
+    font-weight: 800;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 600;
 }
 
 p {
     font-size: 24px;
+    font-weight: 600;
 }
 
 h3 {
@@ -79,9 +83,13 @@ Section - Score Panel
 
 .star-rating > li {
     display: inline-block;
-    padding: 8px;
+    padding: 2px;
+    font-size: 50px;
+    
 }
-
+.fa-star {
+    color: yellow;
+}
 .moves-counter {
     padding: 8px;
 }
@@ -91,7 +99,7 @@ Section - Score Panel
 }
 
 .timer-container {
-    background: #fff;
+    background: url('img/ignasi_pattern_s.png');
     border-radius: 8px;
     color: #000;
     margin: 8px;
@@ -108,29 +116,40 @@ Section - Modal
 
 /* Modal (background) */
 .modal {
-    /*Hidden by default */
-    display: block;
+    /*set the position to fixed which keeps the text in the center of the screen (using the top=0 and left=0 positioning and changed the display from block to none so that the modal will be displayed only when called through JS) */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     /* Fallback color */
-    background-color: rgb(46, 61, 73);
+    background-color: rgb(72, 73, 46);
     /* With opacity */
     background-color: rgba(46, 61, 73, 0.6);
 }
 
 /* Modal Content/Box */
-/* TODO: Style this and make it look better */
+/* used the display flex with a flex-direction of column to center and stack each element */
 .modal-content {
-    
-    margin: 5% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
     width: 80%;
+}
+
+
+
+#matched{
+    color: greenyellow;
 }
 
 /* The Close Button */
 #close {
     align-self: flex-end;
-    color: #28e;
-    font-size: 80px;
+    color: hotpink;
+    font-size: 60px;
 }
 
 #close:hover,
@@ -143,12 +162,13 @@ Section - Modal
 /* Modal Image*/
 .modal-img {
     display: inline-block;
-    margin: 16px 0 16px;
-    width: 320px;
+    margin: 8px 0 8px;
+    width: 200px;
 }
 
 p.stats {
     font-weight: 600;
+    color: greenyellow;
 }
 
 p.stats:last-child {
@@ -156,8 +176,9 @@ p.stats:last-child {
 }
 
 .play-again-btn {
-    background: #28e;
+    background: hotpink;
     margin-bottom: 16px;
+    
 }
 
 /*----------------------------------
@@ -165,7 +186,7 @@ Deck of Cards
 ------------------------------------*/
 /*Mobile first responsiveness*/
 .deck {
-    background: #5cf;
+    background-image: url('../img/border.jpg');
     border-radius: 24px;
     display: flex;
     flex-wrap: wrap;
@@ -196,6 +217,8 @@ https://stackoverflow.com/questions/21107439/disable-or-change-firefoxs-element-
 img {
     user-select: none;
     width: 96px;
+    height: 160px;
+    border-radius: 8px;
 }
 
 .deck img {
@@ -255,8 +278,9 @@ img {
         width: 144px;
     }
 
-    .modal-content h2 {
-        font-size: 64px;
+    #congrats{
+        color: red;
+        font-size: 44px;
     }
 
     .play-again-btn {
@@ -267,7 +291,7 @@ img {
 /*----------------------------------
 Desktops
 ------------------------------------*/
-@media screen and (min-width: 800px) {
+/*@media screen and (min-width: 800px) {
 
     h1 {
         font-size: 96px;
@@ -303,12 +327,11 @@ Desktops
         font-size: 80px;
     }
 
-    /* Modal Image*/
     .modal-img {
-        width: 480px;
+        width: 200px;
     }
 
     .play-again-btn {
         font-size: 32px;
     }
-}
+}*/

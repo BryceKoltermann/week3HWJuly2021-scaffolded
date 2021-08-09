@@ -6,21 +6,22 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fallout Memory Game</title>
-    <!-- TODO: Connect the given styles file to this HTML -->
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!--The link element is added in the header with the link relationship of stylesheet identified by the rel and the link identified in the Href attribute-->
 </head>
 <body>
     <div class="container">
         <header class="header">
             <h1>Memory Game</h1>
-            <h2>FallOut Edition</h2>
+            <h2>Minecraft Edition</h2>
         </header>
 
         <section class="score-panel">
             <h3>Score Panel</h3>
         <ul id="star-rating" class="star-rating">
-            <li class="star"><i class="fa fa-star"></i></li>
-            <li class="star"><i class="fa fa-star"></i></li>
-            <li class="star"><i class="fa fa-star"></i></li>
+            <li class="star"><i class="fa fa-star">&#9733;</i></li>
+            <li class="star"><i class="fa fa-star">&#9733;</i></li>
+            <li class="star"><i class="fa fa-star">&#9733;</i></li>
             </ul>
             <span class="moves-counter">0</span> Moves
             <div class="timer-container">
@@ -38,9 +39,19 @@
 
     <!-- Modal -->
     <section class="win-game-modal">
-        
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span id="close">&times;</span>
+                <p id="congrats">CONGRATULATIONS!!!</p>
+                <p id="matched">You correctly matched all 8 pairs</p>
+                <img src="./img/thumbsup.jpg" alt="Thumbs Up!" class="modal-img">
+                <button class="btn play-again-btn">Play Again?</button>
+            </div>
+        </div>
     </section>
+    <script src="./js/index.js"></script>
+    <!--I used the script tag with the SRC attribute to link the JS file-->
 
-    <!-- TODO: Connect the given JS file to your HTML -->
+    
 </body>
 </html>
